@@ -1,1 +1,33 @@
-<p>new-food works!</p>
+<section id="searchBox">
+    <h3>Search Food</h3>
+    <input type="text" name="" id="">
+  </section>
+  
+  <div class="main-container">
+    <div class="new-container">
+  
+      <div id="newFood">
+        <h2> <span> AddNewFood </span></h2>
+        Name: <input type="text" id="name" name="name" [(ngModel)] = "newFoodName"> <br><br>
+        Calories: <input type="text" id="calories" name="cal" [(ngModel)] = "newFoodCalories"> <br><br>
+        Image: <input type="text" id="image" name="img" [(ngModel)] = "newFoodImage"> <br><br>
+        <button type="button" (click) = "addFood()">Add Food</button> <br><br>
+      </div>
+  
+      <div id="displayContainer">
+          <ul class="items">
+            <li *ngFor="let item of items">
+              <img src="{{item.image}}" alt=" {{item.name}}">
+              <div class="grid">
+                <p>{{item.name}}</p>
+                <p>Calory-<span class="color">{{item.calories}}</span></p>
+                <input #count  type="number">
+                <button class="add-btn" (click)="addCount(count.value,item)">Add</button>
+              </div>
+            </li>
+          </ul>
+      </div>
+    </div>
+  
+  </div>
+  
